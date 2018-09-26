@@ -44,7 +44,7 @@
         ],
         "operationId": "ServiceTopologies_CreateOrUpdate",
         "summary": "Creates or updates a service topology.",
-        "description": "Synchronously creates a new service topology or updates an existing service topology.",
+        "description": "Synchronously creates a new service topology or updates an existing service topology with given resource group, location and artifact source.",
         "x-ms-examples": {
           "Create a topology with Artifact Source": {
             "$ref": "./examples/servicetopology_createorupdate.json"
@@ -84,7 +84,7 @@
           "ServiceTopologies"
         ],
         "operationId": "ServiceTopologies_Get",
-        "summary": "Gets a topology resource.",
+        "summary": "Gets the service topology.",
         "x-ms-examples": {
           "Get topology": {
             "$ref": "./examples/servicetopology_get.json"
@@ -124,7 +124,7 @@
           "ServiceTopologies"
         ],
         "operationId": "ServiceTopologies_Delete",
-        "summary": "Deletes a topology resource.",
+        "summary": "Deletes the service topology.",
         "x-ms-examples": {
           "Delete topology": {
             "$ref": "./examples/servicetopology_delete.json"
@@ -166,7 +166,7 @@
           "Services"
         ],
         "operationId": "Services_CreateOrUpdate",
-        "summary": "Creates or updates a service in the topology.",
+        "summary": "Creates or updates a service in a topology with given resource group, location, service topology and target location and subscription Id.",
         "description": "Synchronously creates a new service or updates an existing service.",
         "x-ms-examples": {
           "Create service": {
@@ -219,7 +219,7 @@
           "Services"
         ],
         "operationId": "Services_Get",
-        "summary": "Gets a service resource.",
+        "summary": "Gets the service.",
         "x-ms-examples": {
           "Get service": {
             "$ref": "./examples/service_get.json"
@@ -262,7 +262,7 @@
           "Services"
         ],
         "operationId": "Services_Delete",
-        "summary": "Deletes a service resource.",
+        "summary": "Deletes the service.",
         "x-ms-examples": {
           "Delete service": {
             "$ref": "./examples/service_delete.json"
@@ -308,7 +308,7 @@
         ],
         "operationId": "ServiceUnits_CreateOrUpdate",
         "x-ms-long-running-operation": true,
-        "summary": "Creates or updates a service unit in the service within the referenced topology resource.",
+        "summary": "Creates or updates a service unit for given resource group, location, service topology, service, target resource group, mode, template and parameters for deployment.",
         "description": "This is an asynchronous operation and can be polled to completion using the operation resource returned by this operation.",
         "x-ms-examples": {
           "Create service unit using relative paths into the artifact source": {
@@ -373,7 +373,7 @@
           "ServiceUnits"
         ],
         "operationId": "ServiceUnits_Get",
-        "summary": "Gets a service unit resource.",
+        "summary": "Gets the service unit.",
         "x-ms-examples": {
           "Get service unit": {
             "$ref": "./examples/serviceunit_get.json"
@@ -419,7 +419,7 @@
           "ServiceUnits"
         ],
         "operationId": "ServiceUnits_Delete",
-        "summary": "Deletes a service unit resource.",
+        "summary": "Deletes the service unit.",
         "x-ms-examples": {
           "Delete service unit": {
             "$ref": "./examples/serviceunit_delete.json"
@@ -467,7 +467,7 @@
           "Steps"
         ],
         "operationId": "Steps_CreateOrUpdate",
-        "summary": "Creates or updates a deployment step.",
+        "summary": "Creates or updates a rollout step with given step properties.",
         "description": "Synchronously creates a new step or updates an existing step.",
         "x-ms-examples": {
           "Create deployment step": {
@@ -516,7 +516,7 @@
           "Steps"
         ],
         "operationId": "Steps_Get",
-        "summary": "Gets a topology resource.",
+        "summary": "Gets the step.",
         "x-ms-examples": {
           "Get deployment step": {
             "$ref": "./examples/step_get.json"
@@ -556,7 +556,7 @@
           "Steps"
         ],
         "operationId": "Steps_Delete",
-        "summary": "Deletes a deployment step.",
+        "summary": "Deletes the step.",
         "x-ms-examples": {
           "Delete deployment step": {
             "$ref": "./examples/step_delete.json"
@@ -654,7 +654,7 @@
           "Rollouts"
         ],
         "operationId": "Rollouts_Get",
-        "summary": "Gets detailed information of an ongoing or completed rollout.",
+        "summary": "Gets detailed information of a rollout.",
         "x-ms-examples": {
           "Get rollout": {
             "$ref": "./examples/rollout_get.json"
@@ -697,8 +697,8 @@
           "Rollouts"
         ],
         "operationId": "Rollouts_Delete",
-        "summary": "Deletes a rollout resource.",
-        "description": "A rollout can only be deleted if it is in a terminal state.",
+        "summary": "Deletes a rollout.",
+        "description": "Only rollouts in terminal state can be deleted.",
         "x-ms-examples": {
           "Delete rollout": {
             "$ref": "./examples/rollout_delete.json"
@@ -741,7 +741,7 @@
         ],
         "operationId": "Rollouts_Cancel",
         "summary": "Stops a running rollout.",
-        "description": "A rollout can be canceled only if it is in running state.",
+        "description": "Only running rollouts can be canceled.",
         "x-ms-examples": {
           "Cancel rollout": {
             "$ref": "./examples/rollout_post_cancel.json"
@@ -784,7 +784,7 @@
         ],
         "operationId": "Rollouts_Restart",
         "summary": "Restarts a failed rollout and optionally skips all succeeded steps.",
-        "description": "A rollout can be restarted only if is in a terminal state and failed.",
+        "description": "Only failed terminal state rollouts can be restarted.",
         "x-ms-examples": {
           "Restart rollout": {
             "$ref": "./examples/rollout_post_restart.json"
@@ -833,7 +833,7 @@
           "ArtifactSources"
         ],
         "operationId": "ArtifactSources_CreateOrUpdate",
-        "summary": "Creates or updates an Artifact source.",
+        "summary": "Creates or updates an artifact source.",
         "description": "Synchronously creates a new artifact source or updates an existing artifact source.",
         "x-ms-examples": {
           "Create artifact source": {
@@ -885,7 +885,7 @@
           "ArtifactSources"
         ],
         "operationId": "ArtifactSources_Get",
-        "summary": "Gets an artifact resource.",
+        "summary": "Gets an artifact source.",
         "x-ms-examples": {
           "Get artifact source": {
             "$ref": "./examples/artifactsource_get.json"
@@ -925,7 +925,7 @@
           "ArtifactSources"
         ],
         "operationId": "ArtifactSources_Delete",
-        "summary": "Deletes an artifact source resource.",
+        "summary": "Deletes an artifact source.",
         "x-ms-examples": {
           "Delete artifact source": {
             "$ref": "./examples/artifactsource_delete.json"
@@ -967,7 +967,7 @@
           "Operations"
         ],
         "operationId": "Operations_Get",
-        "summary": "Gets an operation resource.",
+        "summary": "Gets an Azure Deployment Manager operation.",
         "x-ms-examples": {
           "Get operations": {
             "$ref": "./examples/operations_get.json"
