@@ -1083,7 +1083,7 @@
           "type": "string"
         },
         "dependsOnStepGroup": {
-          "description": "The list of step names on which this step depends.",
+          "description": "The list of step group names this step group depends on.",
           "type": "array",
           "items": {
             "type": "string"
