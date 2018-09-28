@@ -1094,7 +1094,7 @@
           ]
         },
         "preDeploymentSteps": {
-          "description": "The list of step names to be run before deploying the target.",
+          "description": "The list of steps to be run before deploying the target.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/PrePostStep"
@@ -1106,7 +1106,7 @@
           "example": "Microsoft.DeploymentManager/serviceTopologies/myServiceTopology/services/myService/serviceUnits/database"
         },
         "postDeploymentSteps": {
-          "description": "The list of step names to be run after deploying the target.",
+          "description": "The list of steps to be run after deploying the target.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/PrePostStep"
